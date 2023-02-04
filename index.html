@@ -59,14 +59,16 @@
                               <h1 class="js_error_placement quizz_question ">Enter the nearest city to you</h1>
                               <span class="not_mandatory"></span>
                             </div>
-                      
+                      <form action = "http://localhost:5000/city" method="POST">
                             <div class="form_fields select_row">
                               <div class="form_input"> 
-                                <span><input type="text" name="participation[promo_response_attributes][response_11728]" id="participation_promo_response_attributes_response_11728"></span>
+                                <span><input type="text" name="city" id="city"></span>
+                                <button type="submit" id="clicked">Submit</button>
                               </div> &nbsp;
                             </div> &nbsp;
                           </div><!-- - class=row --> &nbsp;
                         </div><!-- - class=wrapper_row --> &nbsp;
+                    </form>
                       </section> &nbsp;
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
