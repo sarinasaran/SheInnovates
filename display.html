@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Scrolling Nav - Start Bootstrap Template</title>
+        <title>Outfit of the Day</title>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"  />
     </head>
@@ -33,6 +33,9 @@
         <!-- Footer-->
         <footer class="py-5 bg-secondary">
             <h1 class="text-white text-center">{{ outfit }}</h1>
+            <form action = "http://localhost:5000/" class = "text-center">
+                <button class = "bg-secondary text-white text-center" type = "submit" id =  "clicked" >Back to Home</button>
+            </form>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

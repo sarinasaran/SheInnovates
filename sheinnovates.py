@@ -21,7 +21,7 @@ def get_outfit(city, option):
 
     if weatherData.json()['cod'] == '404':
         print("No City Found")
-        return ("Invalid City", None)
+        return ("Invalid City", None, None)
 
     # CONDITION
     conditions = {2:'Thunderstorm', 3:'Drizzle', 5:'Rain', 6:'Snow', 7:'Atmosphere', 800:'Clear', 8:'Clouds'}
@@ -129,29 +129,29 @@ def get_outfit(city, option):
     casOut = {'cold':{1:'winter puffer', 2:'sherpa jacket'},
             'chilly':{8:'winter puffer'},
             'moderate':{1:'jean jacket', 2:'cardigan'},
-            'hot':{1:'no outerwear needed! too hot'},
-            'scorching':{1:'no outerwear needed! too hot'}}
+            'hot':{1:'no outerwear needed!'},
+            'scorching':{1:'no outerwear needed!'}}
 
 
     fancyOut = {'cold':{1:'trench coat', 2:'fur overcoat',},
             'chilly':{8:'sherpa lined coat', 3:'trench coat'},
             'moderate':{1:'leather jacket',},
-            'hot':{1:'no outerwear needed! too hot'},
-            'scorching':{1:'no outerwear needed! too hot'}}
+            'hot':{1:'no outerwear needed!'},
+            'scorching':{1:'no outerwear needed!'}}
 
 
     athOut = {'cold':{1:'winter puffer'},
             'chilly':{8:'winter puffer'},
             'moderate':{1:'windbreaker',},
-            'hot':{1:'no outerwear needed! too hot'},
-            'scorching':{1:'no outerwear needed! too hot'}}
+            'hot':{1:'no outerwear needed!'},
+            'scorching':{1:'no outerwear needed!'}}
 
 
     profOut = {'cold':{1:'trench coat', 2:'fur overcoat',},
             'chilly':{8:'sherpa lined coat', 2:'trench coat'},
             'moderate':{1:'blazer',},
-            'hot':{1:'no outerwear needed! too hot'},
-            'scorching':{1:'no outerwear needed! too hot'}}
+            'hot':{1:'no outerwear needed!'},
+            'scorching':{1:'no outerwear needed!'}}
 
     # SHOES SHOES SHOES SHOES SHOES SHOES 
 
@@ -493,10 +493,11 @@ def get_outfit(city, option):
             random_value5 = fancyOut[first_lvl_key][randO]
             print(f'Outit: {random_value} + {random_value2} + {random_value3} + {random_value4} + {random_value5}')
     
-    outfit = random_value + " + " + random_value2 + " + " + random_value3 + " + " + random_value4 + " + " + random_value5
+    outfit = random_value.capitalize() + " + " + random_value2.capitalize() + " + " + random_value3.capitalize() + " + " + random_value4.capitalize() + " + " + random_value5.capitalize()
  
 ###################################################
 ###################################################
+
     return (str(int(temp)) + "F", weather_type, outfit) 
 
 ###################################################
@@ -519,7 +520,7 @@ def find_city():
         # return "This is the city: " + city
         if temperature == "Invalid City":
             return render_template('display.html', city = temperature, temp = "", cond = "", outfit = "Cannot choose outfit")
-        return render_template('display.html', city = city, temp = temperature, cond = conditions, outfit = outfit)
+        return render_template('display.html', city = city.title(), temp = temperature, cond = conditions, outfit = outfit)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
