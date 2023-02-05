@@ -13,13 +13,13 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Dress by Dess: outfits based on weather</a>
+                <a class="text-center navbar-brand" href="#page-top">Dress by Dess: outfits based on weather</a>
             </nav>
         </nav>
         <!-- Masthead-->
@@ -53,11 +53,11 @@
                 <!-- City Question-->
                 <!-- occasion Question-->
                 <head>
-                  <title>Select Box Control</title>
+                  <title>Dress by DESS</title>
                 <head>
                <body>
                   <p>
-                  <form>
+                  <form action = "http://localhost:5000/city" method="POST">
                     <div class="row justify-content-center">
                       <section style="" class="body current" id="wizard-p-0" role="tabpanel" aria-labelledby="wizard-h-0" aria-hidden="false">
                           <div class="wrapper_row" style="">
@@ -76,7 +76,7 @@
                           </div><!-- - class=wrapper_row --> 
                         </section> 
                         <h1 class="masthead-heading text-secondary mb-0 text-center">Select an occasion
-                     <select name = "dropdown" class = "text-secondary text-center">
+                     <select name = "occasion" class = "text-secondary text-center">
                         <option value = "Casual" selected>Casual</option>
                         <option value = "Athletic/Leisure">Athletic / Leisure</option>
                         <option value = "Professional">Professional</option>

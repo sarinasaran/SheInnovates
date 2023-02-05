@@ -6,16 +6,15 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Scrolling Nav - Start Bootstrap Template</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"  />
     </head>
     <body id="page-top">
         <!-- Header-->
         <header class="bg-primary bg-gradient text-white">
             <div class="container px-4 text-center">
-                <h1 class="fw-bolder">City: <br> Temperature: <br> Conditions: <br> Outfit:</h1>
-                Here is the suggested outfit for today!
+                <h1 class="fw-bolder">City: {{ city }}<br> Temperature: {{ temp }}<br> Conditions: {{ cond }}<br></h1>
+                <h2>Here is the suggested outfit for today!</h2>
                 <!--<p class="lead">A functional Bootstrap 5 boilerplate for one page scrolling websites</p> -->
             </div>
         </header>
@@ -26,16 +25,18 @@
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
+                        
                     </div>
                 </div>
             </div>
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-secondary">
+            <h1 class="text-white text-center">{{ outfit }}</h1>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="scripts.js"></script>
     </body>
 </html>
